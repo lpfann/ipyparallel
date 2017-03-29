@@ -1323,8 +1323,8 @@ class SGELauncher(PBSLauncher):
     """Sun GridEngine is a PBS clone with slightly different syntax"""
     job_array_regexp = CRegExp('#\$\W+\-t')
     job_array_template = Unicode('#$ -t 1-{n}')
-    queue_regexp = CRegExp('#\$\W+-q\W+\$?\w+')
-    queue_template = Unicode('#$ -q {queue}')
+    queue_regexp = CRegExp('#\$\W+-P\W+\$?\w+')
+    queue_template = Unicode('#$ -P {queue}')
 
 
 class SGEControllerLauncher(SGELauncher, BatchClusterAppMixin):
